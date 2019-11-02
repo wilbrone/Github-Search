@@ -11,11 +11,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 
 import { GitPageComponent } from './components/git-page/git-page.component';
+import { SearchDetailComponent } from './components/search-detail/search-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GitPageComponent
+    GitPageComponent,
+    SearchDetailComponent
   ],
   imports: [
     BrowserModule,
