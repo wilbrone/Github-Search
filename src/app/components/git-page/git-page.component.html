@@ -1,0 +1,8 @@
+<div class="container wrap">
+  <form class="example-form" #searchForm='ngForm' (ngSubmit)='submitSearch($event, searchForm)'>
+    <mat-form-field class="example-full-width" width="100%">
+      <input matInput type="text" placeholder="Github UserName" name='q' ngModel>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Primary</button>
+  </form>
+</div>  
