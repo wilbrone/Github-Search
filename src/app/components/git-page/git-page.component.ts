@@ -12,7 +12,7 @@ export class GitPageComponent implements OnInit {
   query: any;
   constructor(private router: Router) { }
 
-  submitSearch(event, queryTerm){
+  submitSearch(queryTerm){
     this.query = queryTerm.value['q']
     console.log(this.query);
     if (this.query){
