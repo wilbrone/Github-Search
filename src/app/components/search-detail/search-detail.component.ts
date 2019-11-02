@@ -17,11 +17,16 @@ export class SearchDetailComponent implements OnInit {
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params=>{
       console.log(params);
-      // this.data = params.q;
-      this.dat = this.gitService.getUser(params)
+      let p = params.q;
+      console.log(p)
+      this.gitService.getUser(p).subscribe(data=>{
+      this.dat = data;
+      console.log(this.dat)
+      },
+      (error)=>{
+        console.log(error)
+      });
     })
-
-    console.log(this.dat)
   }
 
 }
