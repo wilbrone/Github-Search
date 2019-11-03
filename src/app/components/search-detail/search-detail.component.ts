@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive,ElementRef, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { GitService } from '../../services/git/git.service';
@@ -10,6 +10,7 @@ import { GitService } from '../../services/git/git.service';
 })
 export class SearchDetailComponent implements OnInit {
   dat: any;
+  user: any;
   routeSub: any;
   constructor(private route: ActivatedRoute, public gitService: GitService) { }
 
@@ -20,12 +21,24 @@ export class SearchDetailComponent implements OnInit {
       let p = params.q;
       console.log(p)
       this.gitService.getUser(p).subscribe(data=>{
-      this.dat = data;
-      console.log(this.dat)
+        this.user = data
+        console.log(this.user);
+
+          // start of another fx
+        this.gitService.getUserRepo(this.user.repos_url).subscribe(data=>{
+          this.dat = data;
+          console.log(this.dat)
+        },
+        (error)=>{
+          console.log(error)
+        });
+        // ************
       },
       (error)=>{
         console.log(error)
-      });
+      })
+
+      
     })
   }
 

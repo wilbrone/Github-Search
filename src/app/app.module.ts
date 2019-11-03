@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 import { GitPageComponent } from './components/git-page/git-page.component';
 import { SearchDetailComponent } from './components/search-detail/search-detail.component';
@@ -32,7 +33,8 @@ import { SearchDetailComponent } from './components/search-detail/search-detail.
     MatButtonModule,
     MatChipsModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

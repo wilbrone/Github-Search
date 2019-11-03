@@ -15,17 +15,22 @@ export class GitService {
   dats: any;
   constructor(private http: HttpClient) { }
 
-  getUser(params){
-    console.log(params);
-    let url = this.serverPath + params + "/repos" + "?api_key=" + environment.APIKEY;
+  getUser(param){
+    console.log(param);
+    let url = this.serverPath + param + "?api_key=" + environment.APIKEY;
     console.log(url);
-    // let headers = new Headers ({
-    //   'Content-Type': 'application/json',
-    // });
-
 
     return this.http.get(url);
   }
+
+  getUserRepo(params){
+    console.log(params);
+    let url = params + "?api_key=" + environment.APIKEY;
+    console.log(url);
+
+    return this.http.get(url);
+  }
+
 }
 
     // *********************************************************

@@ -1,22 +1,30 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="user">
   <mat-toolbar-row>
-    <span>Custom Toolbar</span>
+    <span>
+      <img src="{{user.avatar_url}}" alt="Avatar" class="avatar">
+    </span>
   </mat-toolbar-row>
 
   <mat-toolbar-row>
-    <span>Second Line</span>
+    <span>{{ user.login }}</span>
     <span class="example-spacer"></span>
-    <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon> -->
+    <span><strong>Followers:</strong>&nbsp;<em>{{ user.followers }}</em></span>
   </mat-toolbar-row>
 
   <mat-toolbar-row>
-    <span>Third Line</span>
+    <span>{{ user.location }}</span>
     <span class="example-spacer"></span>
-    <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon> -->
-    <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon> -->
+    <span><strong>Following:</strong>&nbsp;<em>{{ user.following }}</em></span>
   </mat-toolbar-row>
 </mat-toolbar>
-
-<div *ngFor="let repo of dat">
-  <p>{{ repo.name }}</p>
+<div class="container row" id="cover">
+  <div *ngFor="let repo of dat" class="rp">
+    <mat-card [ngStyle]="repo.language=='JavaScript'?{'background-color': 'yellow'} : repo.language=='TypeScript'?{'background-color': '#64B5F6'} : repo.language=='Dart'?{'background-color': '#E57373'} : repo.language=='Python'?{'background-color': '#A1887F'} : repo.language=='Go'?{'background-color': '#78909C'} : {'background-color': 'white'}">
+      <p>
+        <em>Title:&nbsp;</em><span>{{ repo.name }}</span><br>
+        <em>Description:&nbsp;</em><span>{{ repo.description }}</span><br>
+        <em>Language:&nbsp;</em><span>{{ repo.language }}</span>
+      </p>
+    </mat-card>
+  </div>
 </div>
