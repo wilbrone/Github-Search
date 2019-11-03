@@ -10,6 +10,7 @@ export class GitPageComponent implements OnInit {
   @Output() emitSearch = new EventEmitter<any>();
 
   query: any;
+  term: any;
   constructor(private router: Router) { }
 
   submitSearch(queryTerm){
@@ -17,6 +18,14 @@ export class GitPageComponent implements OnInit {
     console.log(this.query);
     if (this.query){
       this.router.navigate(['/search', {q: this.query}])
+    }
+  }
+
+  repoSearch(searchTerm){
+    this.term = searchTerm.value['w']
+    console.log(this.term);
+    if (this.term){
+      this.router.navigate(['/search', {w: this.term}])
     }
   }
 

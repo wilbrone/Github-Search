@@ -11,6 +11,7 @@ import {environment} from '../../../environments/environment'
 export class GitService {
 
   private serverPath: string = AppConst.serverPath;
+  private sPath: string = AppConst.Path;
 
   dats: any;
   constructor(private http: HttpClient) { }
@@ -26,6 +27,14 @@ export class GitService {
   getUserRepo(params){
     console.log(params);
     let url = params + "?api_key=" + environment.APIKEY;
+    console.log(url);
+
+    return this.http.get(url);
+  }
+
+  getRepos(param){
+    console.log(param);
+    let url = this.sPath + param + "&?api_key=" + environment.APIKEY;
     console.log(url);
 
     return this.http.get(url);

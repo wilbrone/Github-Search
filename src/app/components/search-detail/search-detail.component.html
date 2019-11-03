@@ -1,30 +1,46 @@
-<mat-toolbar color="primary" *ngIf="user">
-  <mat-toolbar-row>
-    <span>
-      <img src="{{user.avatar_url}}" alt="Avatar" class="avatar">
-    </span>
-  </mat-toolbar-row>
+<div>
+  <mat-toolbar color="primary" *ngIf="user">
+    <mat-toolbar-row>
+      <span>
+        <img src="{{user.avatar_url}}" alt="Avatar" class="avatar">
+      </span>
+      <span class="example-spacer"></span>
+      <span><strong>Followers:</strong>&nbsp;<em>{{ user.followers }}</em></span>
+    </mat-toolbar-row>
 
-  <mat-toolbar-row>
-    <span>{{ user.login }}</span>
-    <span class="example-spacer"></span>
-    <span><strong>Followers:</strong>&nbsp;<em>{{ user.followers }}</em></span>
-  </mat-toolbar-row>
+    <mat-toolbar-row>
+      <i class="material-icons">person</i>&nbsp;
+      <span>{{ user.login }}</span>
+      <span class="example-spacer"></span>
+      <span><strong>Following:</strong>&nbsp;<em>{{ user.following }}</em></span>
+    </mat-toolbar-row>
 
-  <mat-toolbar-row>
-    <span>{{ user.location }}</span>
-    <span class="example-spacer"></span>
-    <span><strong>Following:</strong>&nbsp;<em>{{ user.following }}</em></span>
-  </mat-toolbar-row>
-</mat-toolbar>
-<div class="container row" id="cover">
-  <div *ngFor="let repo of dat" class="rp">
-    <mat-card [ngStyle]="repo.language=='JavaScript'?{'background-color': 'yellow'} : repo.language=='TypeScript'?{'background-color': '#64B5F6'} : repo.language=='Dart'?{'background-color': '#E57373'} : repo.language=='Python'?{'background-color': '#A1887F'} : repo.language=='Go'?{'background-color': '#78909C'} : {'background-color': 'white'}">
-      <p>
-        <em>Title:&nbsp;</em><span>{{ repo.name }}</span><br>
-        <em>Description:&nbsp;</em><span>{{ repo.description }}</span><br>
-        <em>Language:&nbsp;</em><span>{{ repo.language }}</span>
-      </p>
-    </mat-card>
+    <mat-toolbar-row>
+      <i class="material-icons">room</i>&nbsp;
+      <span>{{ user.location }}</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="container row" id="cover">
+    <div *ngFor="let repo of dat" class="rp">
+      <mat-card [ngStyle]="repo.language=='JavaScript'?{'background-color': 'yellow'} : repo.language=='TypeScript'?{'background-color': '#64B5F6'} : repo.language=='Dart'?{'background-color': '#E57373'} : repo.language=='Python'?{'background-color': '#A1887F'} : repo.language=='Go'?{'background-color': '#78909C'} : {'background-color': 'white'}">
+        <p>
+          <em>Title:&nbsp;</em><span style="font-weight: bold;">{{ repo.name }}</span><br>
+          <em>Description:&nbsp;</em><span style="font-size: 0.8em;">{{ repo.description }}</span><br>
+          <em>Language:&nbsp;</em><span style="font-weight: bold; font-size: 0.8em;">{{ repo.language }}</span>
+        </p>
+      </mat-card>
+    </div>
   </div>
-</div>
+</div> 
+
+ <!--  -->
+ <div>
+   
+ </div>
+ <!--  -->
+
+<button mat-mini-fab aria-label="Example icon-button with a heart icon" class="btn" routerLink="/git">
+  <!-- <mat-icon>home</mat-icon> -->
+  <i class="material-icons">home</i>&nbsp;
+</button>

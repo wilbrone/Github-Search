@@ -11,34 +11,54 @@ import { GitService } from '../../services/git/git.service';
 export class SearchDetailComponent implements OnInit {
   dat: any;
   user: any;
+  repos: any;
   routeSub: any;
+
+  p: any;
+  r: any;
   constructor(private route: ActivatedRoute, public gitService: GitService) { }
 
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params=>{
       console.log(params);
-      let p = params.q;
-      console.log(p)
-      this.gitService.getUser(p).subscribe(data=>{
-        this.user = data
-        console.log(this.user);
+      this.p = params.q;
+      console.log(this.p)
+      this.r = params.w;
+      console.log(this.r)
 
-          // start of another fx
-        this.gitService.getUserRepo(this.user.repos_url).subscribe(data=>{
-          this.dat = data;
-          console.log(this.dat)
+      if(this.r==="undefined"){
+        // IF UserName is entered
+        this.gitService.getUser(this.p).subscribe(data=>{
+          this.user = data
+          console.log(this.user);
+
+            // start of another fx for current users repos
+          this.gitService.getUserRepo(this.user.repos_url).subscribe(data=>{
+            this.dat = data;
+            console.log(this.dat)
+          },
+          (error)=>{
+            console.log(error)
+          });
+          // ************
         },
         (error)=>{
           console.log(error)
-        });
-        // ************
-      },
-      (error)=>{
-        console.log(error)
-      })
+        })
 
-      
+      }else{
+        // IF Repo Name is entered
+        console.log("I am working fine");
+        this.gitService.getRepos(this.r).subscribe(data=>{
+          this.repos = data
+          console.log(this.repos);
+        },
+        (error)=>{
+          console.log(error)
+        })
+      }
+      // END OF IF STATEMENT
     })
   }
 

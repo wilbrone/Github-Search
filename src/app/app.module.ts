@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 import { GitPageComponent } from './components/git-page/git-page.component';
 import { SearchDetailComponent } from './components/search-detail/search-detail.component';
@@ -34,7 +35,8 @@ import { SearchDetailComponent } from './components/search-detail/search-detail.
     MatChipsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
