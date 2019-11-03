@@ -31,3 +31,15 @@ mat-toolbar-row{
   bottom: 9%;
   right: 7%;
 }
+#rep{
+  display: flex;
+  border: solid;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.reposs{
+  border: solid;
+  width: 30%;
+}

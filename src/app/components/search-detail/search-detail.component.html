@@ -35,8 +35,12 @@
 </div> 
 
  <!--  -->
- <div>
-   
+ <div class="container row" id="rep">
+  <div *ngFor="let repo of repos" class="reposs">
+    <mat-card>
+      <span>{{ repo.owner.login }}</span>
+    </mat-card>
+  </div>
  </div>
  <!--  -->
 
