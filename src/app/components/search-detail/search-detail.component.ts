@@ -9,6 +9,15 @@ import { GitService } from '../../services/git/git.service';
   styleUrls: ['./search-detail.component.css']
 })
 export class SearchDetailComponent implements OnInit {
+  // FOR THE RIPPLE EFFECT
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number;
+  color: string;
+  // ***********************
+
   dat: any;
   user: any;
   repos: any;
@@ -18,6 +27,10 @@ export class SearchDetailComponent implements OnInit {
   r: any;
   constructor(private route: ActivatedRoute, public gitService: GitService) { }
 
+  // ViolatorLink(url) {
+  //   console.log(url);
+  //   window.location.href = url;
+  // }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params=>{
@@ -51,7 +64,7 @@ export class SearchDetailComponent implements OnInit {
         // IF Repo Name is entered
         console.log("I am working fine");
         this.gitService.getRepos(this.r).subscribe(data=>{
-          this.repos = data.items;
+          this.repos = data["items"];
           console.log(this.repos);
         },
         (error)=>{

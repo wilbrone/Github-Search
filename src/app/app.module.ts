@@ -13,6 +13,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatRippleModule} from '@angular/material/core';
 
 import { GitPageComponent } from './components/git-page/git-page.component';
 import { SearchDetailComponent } from './components/search-detail/search-detail.component';
@@ -36,7 +37,8 @@ import { SearchDetailComponent } from './components/search-detail/search-detail.
     HttpClientModule,
     MatToolbarModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
