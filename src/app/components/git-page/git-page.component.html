@@ -1,18 +1,17 @@
-<div class="container wrap">
-  <form class="example-form" #searchForm='ngForm' (ngSubmit)='submitSearch(searchForm)'>
-    <mat-form-field class="example-full-width" width="100%">
-      <input matInput type="text" placeholder="Github UserName" name='q' ngModel>
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Search User</button>
-  </form>
+<div class="cover">
+  <div class="container wrap">
+    <form class="example-form" #searchForm='ngForm' (ngSubmit)='submitSearch(searchForm)'>
+      <mat-form-field class="example-full-width" width="100%">
+        <input matInput type="text" placeholder="Github UserName" name='q' ngModel>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Search User</button>
+    </form>
 
-  <form class="example-form" #searchVal='ngForm' (ngSubmit)='repoSearch(searchVal)'>
-    <mat-form-field class="example-full-width" width="100%">
-      <input matInput type="text" placeholder="Github Repo Name" name='w' ngModel>
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Search Repo</button>
-  </form>
-</div>
-
-<div>
+    <form class="example-form" #searchVal='ngForm' (ngSubmit)='repoSearch(searchVal)'>
+      <mat-form-field class="example-full-width" width="100%">
+        <input matInput type="text" placeholder="Github Repo Name" name='w' ngModel>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Search Repo</button>
+    </form>
+  </div>
 </div>
