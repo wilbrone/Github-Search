@@ -27,10 +27,6 @@ export class SearchDetailComponent implements OnInit {
   r: any;
   constructor(private route: ActivatedRoute, public gitService: GitService) { }
 
-  // ViolatorLink(url) {
-  //   console.log(url);
-  //   window.location.href = url;
-  // }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params=>{

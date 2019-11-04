@@ -41,17 +41,3 @@ export class GitService {
   }
 
 }
-
-    // *********************************************************
-    // let promise =  new Promise((resolve, reject)=>{
-    //  return this.http.get(url).toPromise().then(
-    //       (results)=>{
-    //         resolve()
-    //       },
-    //       (error)=>{
-    //         console.log(error)
-    //         reject()
-    //       })
-    // });
-    // console.log(promise)
-    // return promise
