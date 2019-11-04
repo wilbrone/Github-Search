@@ -18,7 +18,7 @@ export class GitService {
 
   getUser(param){
     console.log(param);
-    let url = this.serverPath + param + "?api_key=" + environment.APIKEY;
+    let url = this.serverPath + param + "?access_token=" + environment.APIKEY;
     console.log(url);
 
     return this.http.get(url);
@@ -26,7 +26,7 @@ export class GitService {
 
   getUserRepo(params){
     console.log(params);
-    let url = params + "?api_key=" + environment.APIKEY;
+    let url = params + "?access_token=" + environment.APIKEY;
     console.log(url);
 
     return this.http.get(url);
@@ -34,7 +34,7 @@ export class GitService {
 
   getRepos(param){
     console.log(param);
-    let url = this.sPath + param + "&?api_key=" + environment.APIKEY;
+    let url = this.sPath + param + "&?access_token=" + environment.APIKEY;
     console.log(url);
 
     return this.http.get(url);
