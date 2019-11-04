@@ -1,6 +1,15 @@
 # GithubSearch
 
+#### GithubSearch App, 3rd Nov, 2019
+#### By **Wilbrone**
+## Description
+This app allows users with Github accounts to key in their github user names and their profile and repos will be displayed on the page. The users can also enter a repo name and search through the various repos hosted on git hub.
+
+
+## Technologies Used
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
+with HTML5, CSS and BootStrap
+
 
 ## Development server
 
