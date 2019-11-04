@@ -40,7 +40,7 @@ export class SearchDetailComponent implements OnInit {
       this.r = params.w;
       console.log(this.r)
 
-      if(this.r==="undefined"){
+      if(this.p){
         // IF UserName is entered
         this.gitService.getUser(this.p).subscribe(data=>{
           this.user = data
@@ -60,7 +60,7 @@ export class SearchDetailComponent implements OnInit {
           console.log(error)
         })
 
-      }else{
+      }else if(this.r){
         // IF Repo Name is entered
         console.log("I am working fine");
         this.gitService.getRepos(this.r).subscribe(data=>{
