@@ -62,7 +62,6 @@ export class SearchDetailComponent implements OnInit {
 
       }else if(this.r){
         // IF Repo Name is entered
-        console.log("I am working fine");
         this.gitService.getRepos(this.r).subscribe(data=>{
           this.repos = data["items"];
           console.log(this.repos);

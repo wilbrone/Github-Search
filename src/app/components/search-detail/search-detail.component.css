@@ -27,7 +27,8 @@ mat-toolbar-row{
   margin: 0 auto;
 }
 .btn{
-  position: absolute;
+  position: fixed;
+  display: inline-block !important;
   bottom: 9%;
   right: 7%;
 }
@@ -57,4 +58,9 @@ mat-toolbar-row{
 }
 #alert{
   text-align: center;
+}
+#bttn{
+  position: absolute;
+  margin: auto;
+  left: 0.35em;
 }
