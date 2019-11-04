@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class GitPageComponent implements OnInit {
   @Output() emitSearch = new EventEmitter<any>();
 
+  show:boolean = true;
+
   query: any;
   term: any;
   constructor(private router: Router) { }
@@ -19,6 +21,10 @@ export class GitPageComponent implements OnInit {
     if (this.query){
       this.router.navigate(['/search', {q: this.query}])
     }
+  }
+
+  formToggle(){
+    this.show = !this.show;
   }
 
   repoSearch(searchTerm){
