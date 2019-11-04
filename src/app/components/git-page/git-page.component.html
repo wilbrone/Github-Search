@@ -8,6 +8,11 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button mat-raised-button color="primary" type="submit">Search User</button>
       </form>
+      <i class="material-icons" id="rotate" (click)="formToggle()" 
+      matTooltip="Click to toggle Search Repo input"
+      aria-label="Button that displays a tooltip when focused or hovered over">
+        360
+      </i>
     </div>
 
     <div *ngIf="!show">
@@ -18,8 +23,12 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button mat-raised-button color="primary" type="submit">Search Repo</button>
       </form>
+      <i class="material-icons" id="rotate" (click)="formToggle()" 
+      matTooltip="Click to toggle Search User input"
+      aria-label="Button that displays a tooltip when focused or hovered over">
+        360
+      </i>
     </div>
 
-    <i class="material-icons" id="rotate" (click)="formToggle()">360</i>
   </div>
 </div>

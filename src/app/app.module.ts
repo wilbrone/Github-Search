@@ -14,6 +14,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { GitPageComponent } from './components/git-page/git-page.component';
 import { SearchDetailComponent } from './components/search-detail/search-detail.component';
@@ -38,7 +39,8 @@ import { SearchDetailComponent } from './components/search-detail/search-detail.
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
